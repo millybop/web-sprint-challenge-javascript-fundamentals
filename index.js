@@ -18,7 +18,7 @@ myFunction();
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
 // when line 12 runs, it will look within the function to find the variable, but when it does not, it will scope up to see if the it can find the variable, creating closure.
-
+// We can always pass information down a scope.
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
@@ -28,15 +28,57 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(num1) {
-  for(let i = 0; i < num1; i++){
-    return i;
-  }
+// function summation(num1) {
+//   const sum = num1.reduce(function(acc, item){
+//     return acc + item.num1;
+//   }, 1);
+//   }
+// Attempt 1 did not work.
 
-  }
+// function summation(num2) {
+  // I am getting that numb2.reduce is not a function.
+  // num2.reduce(function(acc, item){
+  //   return acc + item.num1;
+  //   console.log(num2);
+  // }, 1);
+  // }
 
-  console.log('Task 2', summation(4));
- 
+  // function summation(num4){
+  //   var initialValue = 1;
+  //   for(let i = 0; i < num4; i++){
+  //     initialValue + i;
+  //   }
+  //   return initialValue;
+  // }
+
+  // function summation(num8){
+  //   num8.reduce(function(acc,item){
+  //     return acc + item.num8;
+  //   },0);
+  // }
+
+// It seams I keep getting an error because I am ".reduce" on a number and not an array.
+// function summation(num11){
+//   //first let us turn this into an array.
+//   const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
+//   let newArray = range(1, num11, 1);
+//   newArray.reduce(function(acc, item){
+//     return acc + item.newArray;
+//   })
+// }
+
+function summation(num21){
+	newArray = [];
+	for(let i = 1; i < num21 + 1; i++){
+		newArray.push([i]);
+	}
+	sum =	newArray.reduce(function(acc, item){
+		return `${acc} + ${item}`;
+	}, 0);
+	return sum;
+}
+
+console.log(summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
