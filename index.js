@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// when line 12 runs, it will look within the function to find the variable, but when it does not, it will scope up to see if the it can find the variable, creating closure.
 
 
 
@@ -28,10 +28,14 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
+function summation(num1) {
+  for(let i = 0; i < num1; i++){
+    return i;
+  }
 
   }
+
+  console.log('Task 2', summation(4));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
