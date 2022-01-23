@@ -67,18 +67,24 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 //   })
 // }
 
-function summation(num21){
-	newArray = [];
-	for(let i = 1; i < num21 + 1; i++){
-		newArray.push([i]);
-	}
-	sum =	newArray.reduce(function(acc, item){
-		return `${acc} + ${item}`;
-	}, 0);
-	return sum;
+// function summation(num21){
+// 	newArray = [];
+// 	for(let i = 1; i < num21 + 1; i++){
+// 		newArray.push([i]);
+// 	}
+// 	// sum =	newArray.reduce(function(acc, item){
+// 	// 	return `${acc} + ${item}`;
+// 	// }, 0);
+// 	// return sum;
+// }
+
+function summation(num23){
+  for(let i = 0; i < num23 + 1; i++){
+    return num23 + i;
+  }
 }
 
-console.log(summation(4));
+console.log('Task 2', summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -102,10 +108,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(array){
+		const displayNames = [];
+    array.forEach(function(item){
+      displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
+    });
+		return displayNames;
   }
   
+  console.log('Topic 2, request 1:', animalNames(zooAnimals));
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -113,11 +124,14 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(array){
+    const lower = array.map(function(item){
+      return item.animal_name.toLowerCase();
+    });
+		return lower;
   }
-  
-  
+
+  console.log('Topic 2, Request 2:', lowerCaseNames(zooAnimals));
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
